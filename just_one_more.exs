@@ -51,12 +51,27 @@ defmodule JustOneMoreTest do
   use ExUnit.Case, async: true
 
   test "Level 1 example" do
-    assert JustOneMore.level1([1,2,3]) == [2,3,4]
+    assert JustOneMore.level1([1, 2, 3]) == [2, 3, 4]
   end
 
+	test "Level 1 description example" do
+		assert(
+			JustOneMore.level1([1, 0, -1, 5, 100, 37, 20, 18, 12, 0])
+			== [2, 1, 0, 6, 101, 38, 21, 19, 13, 1]
+		)
+	end
+		
+
   test "Level 2 example" do
-    assert JustOneMore.level2(["1","b","3"]) == [2,4]
+    assert JustOneMore.level2(["1", "b", "3"]) == [2, 4]
   end
+
+	test "Level 2 description example" do
+		assert(
+			JustOneMore.level2(~w(1 c 0 -1 5 b 100 37 a 20 18 12 0))
+			== [2, 1, 0, 6, 101, 38, 21, 19, 13, 1]
+		)
+	end
 
   test "Level 3 example" do
     assert(
@@ -64,4 +79,11 @@ defmodule JustOneMoreTest do
       == ["ab13", "a6", "b24a52"]
     )
   end
+
+	test "Level 3 description example" do
+		assert(
+			JustOneMore.level3(~w(ab123 gh00 ijk8 lmn12 cd99ef11))
+			== ~w(ab124 gh01 ijk9 lmn13 cd100ef12)
+		)
+	end
 end
