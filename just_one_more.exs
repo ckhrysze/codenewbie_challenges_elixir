@@ -1,26 +1,26 @@
 defmodule JustOneMore do
 
-	def level1(list) do
-		Enum.map(list, &incr/1)
-	end
+  def level1(list) do
+    Enum.map(list, &incr/1)
+  end
 
-	def level2(list) do
-		list
-		|> Enum.reduce([], &to_integer_only/2)
-		|> Enum.reverse
-		|> Enum.map(&incr/1)
-	end
+  def level2(list) do
+    list
+    |> Enum.reduce([], &to_integer_only/2)
+    |> Enum.reverse
+    |> Enum.map(&incr/1)
+  end
 
-	def level3(list) do
-		list
-		|> Enum.map(&tokenize/1)
-		|> Enum.map(&incr_integers/1)
-		|> Enum.map(&(Enum.join(&1)))
-	end
+  def level3(list) do
+    list
+    |> Enum.map(&tokenize/1)
+    |> Enum.map(&incr_integers/1)
+    |> Enum.map(&(Enum.join(&1)))
+  end
 
-	# helpers
+  # helpers
 
-	defp incr(i), do: i+1
+  defp incr(i), do: i+1
 
 	defp to_integer_only(element, integer_list) do
     case Integer.parse(element) do
